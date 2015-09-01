@@ -1,0 +1,32 @@
+{
+  "name": "webpack-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrent --kill-others \"webpack-dev-server\" \"node index.js\"",
+    "static": "babel-node modules/server/static.js"
+  },
+  "author": "Marc Harter <wavded@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babel-core": "^5.8.22",
+    "babel-eslint": "^4.0.7",
+    "babel-loader": "^5.3.2",
+    "babel-tape-runner": "^1.2.0",
+    "blue-tape": "^0.1.10",
+    "concurrently": "^0.1.1",
+    "eslint": "^1.1.0",
+    "eslint-config-standard": "^4.1.0",
+    "eslint-config-standard-react": "^1.0.4",
+    "eslint-plugin-react": "^3.2.3",
+    "eslint-plugin-standard": "^1.2.0",
+    "webpack": "^1.11.0",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "dependencies": {
+    "babel-runtime": "^5.8.20",
+    "react": "^0.13.3"
+  }
+}
