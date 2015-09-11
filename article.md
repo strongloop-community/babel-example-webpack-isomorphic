@@ -16,11 +16,11 @@ As we discussed prior, Babel solves our first problem well in a modern JavaScrip
 
 ## A common module system
 
-Node has a nice established module system.  Browsers... well not so much. If we want to share code that uses `require('lodash')` with the browser, we have to teach it some tricks.  This is where Webpack enters in.
+Node has a nice established module system.  Browsers... well not so much. If we want to share code that uses `require('lodash')` (the common way to use modules in Node) with the browser, we have to teach the browser some tricks.  This is where [webpack][20] enters in.
 
-Webpack makes client-side development more "Node-like" with the same module system[^2] semantics.  This is important because if we are to share code, we want a `require` (or ES6 `import`) statement to resolve the same way.  It also exposes Node globals as well to keep things familiar (like `global` and `Buffer`).
+Webpack makes client-side development more "Node-like" with the same module system[^2] semantics.  This is important because if we are to share code, we want a `require` (or ES6 `import`) statement to resolve the same way.  It also exposes Node globals (properties and methods on Node's `global` object) as well to keep things familiar (like `process` and `Buffer`).
 
-But client-side development isn't just JavaScript. It's CSS; it's images; it's HTML; it's a lot of things.  Webpack understands those dependencies too and let's you `require` them using *loaders* which we'll come back to in a bit.
+But client-side development isn't just JavaScript. It's CSS; it's images; it's HTML; it's a lot of things.  Webpack understands those dependencies too and let's you `require` them using *loaders*.  We'll come back to that in a bit.
 
 ## 3rd-party isomorphic modules
 
@@ -219,6 +219,7 @@ Ultimately after running your build scripts, you should be able to run `NODE_ENV
 [17]: https://github.com/es-shims/es5-shim
 [18]: https://github.com/zenparsing/es-function-bind
 [19]: https://gist.github.com/jeffmo/054df782c05639da2adb
+[20]: https://webpack.github.io/
 
 [^1]: There are some [browser caveats](https://babeljs.io/docs/advanced/caveats/).  For ES3 environments, also include the [es5-shim](https://github.com/es-shims/es5-shim).
 [^2]: Browserify is another good alternative to Webpack.
